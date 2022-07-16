@@ -5,19 +5,25 @@ using UnityEngine;
 public class MainController : MonoBehaviour
 {
     public GameObject EnemyPrefab;
+    public int maxEnemies = 6;
+    GameObject[] Enemies;
 
     void Start()
     {
-        GenerateEnemy();
+        Enemies = new GameObject[maxEnemies];
     }
 
     void Update()
     {
-        
     }
 
     public void GenerateEnemy()
     {
-        Instantiate(EnemyPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        for (int i = 0; i < maxEnemies; i++) {
+            if (Enemies[i] == null) {
+                Enemies[i] = Instantiate(EnemyPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                break;
+            }
+        }
     }
 }
