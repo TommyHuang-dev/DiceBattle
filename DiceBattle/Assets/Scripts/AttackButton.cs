@@ -10,24 +10,24 @@ public class AttackButton : MonoBehaviour
 
 	public int attackNum;
 	public GameObject controllerObj;
-	private AttackController controller;
+	private MainController controller;
 
 	void Start()
 	{
 		Button btn = button.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-		controller = controllerObj.GetComponent<AttackController>();
+		controller = controllerObj.GetComponent<MainController>();
 		text = button.GetComponentInChildren<TextMeshProUGUI>();
 	}
 	void Update()
 	{
 		UpdateText();
-		button.interactable = !controller.hasAttacked;
+		button.interactable = !controller.isAttacking;
 	}
 
 	void TaskOnClick()
 	{
-		controller.DoAttack(attackNum);
+		controller.StartAttack(attackNum);
 	}
 
 	public void UpdateText()

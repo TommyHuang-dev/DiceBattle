@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 7345608470267013142, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: controllerObj
       value: 
-      objectReference: {fileID: 1517815841}
+      objectReference: {fileID: 2130523473}
     - target: {fileID: 7345608470267013162, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -512,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 7345608470267013142, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: controllerObj
       value: 
-      objectReference: {fileID: 1517815841}
+      objectReference: {fileID: 2130523473}
     - target: {fileID: 7345608470267013162, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -809,7 +809,7 @@ PrefabInstance:
     - target: {fileID: 7345608470267013142, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: controllerObj
       value: 
-      objectReference: {fileID: 1517815841}
+      objectReference: {fileID: 2130523473}
     - target: {fileID: 7345608470267013162, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1294,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 7345608470267013142, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: controllerObj
       value: 
-      objectReference: {fileID: 1517815841}
+      objectReference: {fileID: 2130523473}
     - target: {fileID: 7345608470267013162, guid: 08a7b0100fa3b3f49ac86d16970629ac, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1424,7 +1424,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 11618919240481730, guid: d10062811fea83c4ebaa8005b5328487, type: 3}
+  prefabD4: {fileID: 4495586388262956716, guid: c8365f0f86a4bbd4695e531cdb2a2fd2, type: 3}
+  prefabD6: {fileID: 6653247473480802599, guid: d5c50d4512cc5ff42b19bcc82b4526ae, type: 3}
+  prefabD8: {fileID: 8728018366762082858, guid: eaa4011b158024c47986c92ee717b6ae, type: 3}
+  prefabD10: {fileID: 7969047588254727904, guid: 5e86d564093c7b244835569958857cc6, type: 3}
+  prefabD12: {fileID: 431641703828960371, guid: bf79d700e2008d34482568782507460a, type: 3}
+  prefabD20: {fileID: 5046547886416071561, guid: 6a6347a08cc049e4888cb2db5fdbdda2, type: 3}
+  prefabDxx: {fileID: 1120648873625833178, guid: 7a9536ae808709b4dab9396c17dabf33, type: 3}
   maxEnemies: 6
+  isAttacking: 0
 --- !u!4 &2130523475
 Transform:
   m_ObjectHideFlags: 0

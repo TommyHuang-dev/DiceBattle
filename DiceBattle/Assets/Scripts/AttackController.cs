@@ -5,10 +5,8 @@ public class AttackController : MonoBehaviour
 {
     // Start is called before the first frame update
     private List<Dictionary<int, int>> attacks = new List<Dictionary<int, int>>();
-    public bool hasAttacked;
     void Start()
     {
-        hasAttacked = false;
         // set the 4 attacks
         // 2d20
         attacks.Add(new Dictionary<int, int>{
@@ -28,35 +26,28 @@ public class AttackController : MonoBehaviour
         });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    List<int> RollNums(int attackNum)
+    // list of (dice size, roll)
+    List<(int, int)> RollNums(int attackNum)
     {
         Dictionary<int, int> dice = attacks[attackNum];
-        List<int> rolls = new List<int>();
+        List<(int, int)> rolls = new List<(int, int)>();
         foreach (var die in dice)
         {
             for (int i = 0; i < die.Value; i++)
             {
-                rolls.Add(Random.Range(1, die.Key + 1));
+                int val = Random.Range(1, die.Key + 1);
+                rolls.Add((die.Key, val));
             }
         }
         return rolls;
     }
 
-    public void DoAttack(int attackNum)
+    public List<(int, int)> DoAttack(int attackNum)
     {
-        if (hasAttacked) { return; }
-        RollNums(attackNum);
-
-        hasAttacked = true;
+        return RollNums(attackNum);
     }
 
-    public Dictionary<int, int> GetAttack(int attackNum)
+    public Dictionary<int, int> GetAttackStats(int attackNum)
     {
         return attacks[attackNum];
     }
