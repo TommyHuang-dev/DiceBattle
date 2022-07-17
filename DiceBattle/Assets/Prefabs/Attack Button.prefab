@@ -93,12 +93,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 30
   m_fontSizeBase: 0.1
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
-  m_fontSizeMax: 32
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -173,8 +173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -67.3279, y: 24.46}
-  m_SizeDelta: {x: 260, y: 90}
+  m_AnchoredPosition: {x: -66.881775, y: 19.99812}
+  m_SizeDelta: {x: 259.1077, y: 83.7533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7345608470267013161
 CanvasRenderer:
@@ -271,5 +271,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 7345608470267013163}
-  attackNumber: 0
-  controller: {fileID: 0}
+  attackNum: 0
+  controllerObj: {fileID: 0}
