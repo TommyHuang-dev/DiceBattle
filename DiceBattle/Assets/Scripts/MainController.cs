@@ -15,13 +15,14 @@ public class MainController : MonoBehaviour
 
     void Update()
     {
+        // GenerateEnemy();
     }
 
     public void GenerateEnemy()
     {
         for (int i = 0; i < maxEnemies; i++) {
             if (Enemies[i] == null) {
-                Enemies[i] = Instantiate(EnemyPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                Enemies[i] = Instantiate(EnemyPrefab, new Vector3(i * 3 - 7.5f, 2.5f, 0), Quaternion.identity);
                 break;
             }
         }
