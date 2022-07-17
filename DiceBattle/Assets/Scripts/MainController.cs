@@ -6,13 +6,18 @@ public class MainController : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public int maxEnemies = 6;
+
     GameObject[] enemies;
     private bool isPlayerTurn;
+    private AttackController attackController;
 
     void Start()
     {
         enemies = new GameObject[maxEnemies];
         isPlayerTurn = false;
+        GameObject controllerObj = GameObject.FindWithTag("AttackController");
+        attackController = controllerObj.GetComponent<AttackController>();
+        GenerateEnemy();
     }
 
     void Update()

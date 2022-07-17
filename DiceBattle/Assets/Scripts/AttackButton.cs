@@ -22,6 +22,7 @@ public class AttackButton : MonoBehaviour
 	void Update()
 	{
 		UpdateText();
+		button.interactable = !controller.hasAttacked;
 	}
 
 	void TaskOnClick()

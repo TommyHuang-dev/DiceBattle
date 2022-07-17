@@ -5,8 +5,10 @@ public class AttackController : MonoBehaviour
 {
     // Start is called before the first frame update
     private List<Dictionary<int, int>> attacks = new List<Dictionary<int, int>>();
+    public bool hasAttacked;
     void Start()
     {
+        hasAttacked = false;
         // set the 4 attacks
         // 2d20
         attacks.Add(new Dictionary<int, int>{
@@ -48,7 +50,10 @@ public class AttackController : MonoBehaviour
 
     public void DoAttack(int attackNum)
     {
-        Debug.Log("attacking with attack " + attackNum);
+        if (hasAttacked) { return; }
+        RollNums(attackNum);
+
+        hasAttacked = true;
     }
 
     public Dictionary<int, int> GetAttack(int attackNum)
