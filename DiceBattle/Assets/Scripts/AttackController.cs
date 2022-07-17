@@ -10,7 +10,7 @@ public class AttackController : MonoBehaviour
         // set the 4 attacks
         // 2d20
         attacks.Add(new Dictionary<int, int>{
-            {12, 3}
+            {20, 2}
         });
         // 3d10
         attacks.Add(new Dictionary<int, int>{
