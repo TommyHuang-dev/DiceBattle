@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MainController : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
+    public GameObject enemyPrefab;
     public int maxEnemies = 6;
-    GameObject[] Enemies;
+    GameObject[] enemies;
+    private bool isPlayerTurn;
 
     void Start()
     {
-        Enemies = new GameObject[maxEnemies];
+        enemies = new GameObject[maxEnemies];
+        isPlayerTurn = false;
     }
 
     void Update()
@@ -21,8 +23,8 @@ public class MainController : MonoBehaviour
     public void GenerateEnemy()
     {
         for (int i = 0; i < maxEnemies; i++) {
-            if (Enemies[i] == null) {
-                Enemies[i] = Instantiate(EnemyPrefab, new Vector3(i * 3 - 7.5f, 2.5f, 0), Quaternion.identity);
+            if (enemies[i] == null) {
+                enemies[i] = Instantiate(enemyPrefab, new Vector3(i * 3 - 7.5f, 2.5f, 0), Quaternion.identity);
                 break;
             }
         }

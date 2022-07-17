@@ -1,23 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class AttackButton : MonoBehaviour
 {
 	public Button button;
-	// the base attack / dice roll
-	// key: dx  value: number of dice
+	private TextMeshProUGUI text;
+
 	private Dictionary<int, int> dice;
+	// private int rerolls;
 
 	void Start()
 	{
 		Button btn = button.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
+
+		// key: dx  value: number of dice
 		dice = new Dictionary<int, int>
 		{
 			{4, 2 },
             {8, 1 }
 		};
+
+		text = button.GetComponentInChildren<TextMeshProUGUI>();
+		text.SetText(GetText());
 	}
 
 	List<int> RollNums()
@@ -35,6 +42,7 @@ public class AttackButton : MonoBehaviour
 
 	void TaskOnClick()
 	{
+		Debug.Log(text);
 		Debug.Log(GetText());
 		List<int> rolls = RollNums();
 		string rollstring = "You have rolled:";
