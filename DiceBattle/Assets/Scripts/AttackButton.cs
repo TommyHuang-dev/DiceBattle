@@ -34,7 +34,7 @@ public class AttackButton : MonoBehaviour
 	}
 
 	void TaskOnClick()
-	{ 
+	{
 		Debug.Log(GetText());
 		List<int> rolls = RollNums();
 		string rollstring = "You have rolled:";
