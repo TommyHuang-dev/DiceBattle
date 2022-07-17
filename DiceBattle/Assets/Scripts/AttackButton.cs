@@ -8,62 +8,39 @@ public class AttackButton : MonoBehaviour
 	public Button button;
 	private TextMeshProUGUI text;
 
-	private Dictionary<int, int> dice;
-	// private int rerolls;
+	public int attackNum;
+	public GameObject controllerObj;
+	private AttackController controller;
 
 	void Start()
 	{
 		Button btn = button.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-
-		// key: dx  value: number of dice
-		dice = new Dictionary<int, int>
-		{
-			{4, 2 },
-            {8, 1 }
-		};
-
+		controller = controllerObj.GetComponent<AttackController>();
 		text = button.GetComponentInChildren<TextMeshProUGUI>();
-		text.SetText(GetText());
 	}
-
-	List<int> RollNums()
-    {
-		List<int> rolls = new List<int>();
-		foreach (var die in dice)
-		{
-			for (int i = 0; i < die.Value; i++)
-            {
-				rolls.Add(Random.Range(1, die.Key + 1));
-            }
-		}
-		return rolls;
+	void Update()
+	{
+		UpdateText();
 	}
 
 	void TaskOnClick()
 	{
-		Debug.Log(text);
-		Debug.Log(GetText());
-		List<int> rolls = RollNums();
-		string rollstring = "You have rolled:";
-		foreach (var roll in rolls)
-        {
-			rollstring = rollstring + " " + roll;
-        }
-		Debug.Log(rollstring);
+		controller.DoAttack(attackNum);
 	}
 
-	public string GetText()
+	public void UpdateText()
     {
-        string result = "";
+		Dictionary<int, int> dice = controller.GetAttack(attackNum);
+        string info = "";
         foreach (var die in dice)
 		{
-			if (result != "")
+			if (info != "")
             {
-				result += ", ";
+				info += ", ";
             }
-			result = result + die.Value + "d" + die.Key;
+			info += die.Value + "d" + die.Key;
 		}
-		return result;
+		text.SetText(info);
 	}
 }
